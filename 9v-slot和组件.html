@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<hello>
+				<div>557668787</div>
+				<div>557668787</div>
+				<div>557668787</div>
+				<div>557668787</div>
+			</hello>
+		</div>
+		<template id="box">
+			<div>
+				<h1>68679870980</h1>
+				<slot></slot>
+				<h2>hjkjlkjlklll</h2>
+			</div>
+		</template>
+		<script type="text/javascript">
+			let vm=new Vue({
+				el:'#app',
+				data:{
+					msg:'下雪了'
+				},
+				components:{
+					'hello':{
+						template:'#box'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

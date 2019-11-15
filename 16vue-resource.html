@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+		<title></title>
+	</head>
+
+	<body>
+		<div id="app">
+			<marquee direction="right">
+				<h1>
+					<font color="darkred">{{name}}</font>
+				</h1>
+			</marquee>
+			<input type="button" id="" value="获取数据" @click="getData" />
+            <div class="box">
+            	<div class="item" v-for="item in jokeList">
+            		<img :src="item.img"/>
+            		<h3>{{item.title}}</h3>
+            	</div>
+            </div>
+		</div>
+		<script>
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					name: '笑话大全',
+					jokeList: []
+				},
+				methods: {
+					getData: function() {
+						let data = {
+							"showapi_appid": '106417', //这里需要改成自己的appid
+							"showapi_sign": 'dd86fcbb10cf4740bcc44c0cbc86018b', //这里需要改成自己的应用的密钥secret
+							"page": 1,
+							"maxResult": 20
+//							"len":100
+						}
+						this.$http.get('http://route.showapi.com/341-2', {
+							params: data
+						}).then((res) => {
+							console.log(res)
+							this.jokeList=res.body.showapi_res_body.contentlist;
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

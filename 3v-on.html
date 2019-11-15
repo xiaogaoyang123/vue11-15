@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" id="" value="点击" v-on:click="btn"/>
+			<input type="button" id="" value="点击按钮" @click="change"/>
+		</div>
+		<script type="text/javascript">
+			let vm=new Vue({
+				el:'#app',
+				data:{},
+				methods:{
+					btn(){
+						alert(1111)
+					},
+					change(){
+						alert(255532543)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

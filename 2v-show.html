@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+
+	<body>
+		<div id="app">
+			<input type="button" name="" id="" value="点击" v-on:click="change" />
+			<div v-show="xs" style="width: 200px;height: 200px;background-color: green;"></div>
+		</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					xs: false
+				},
+				methods: {
+					change() {
+						this.xs = !this.xs;
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

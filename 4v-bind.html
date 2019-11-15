@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<img :src="Imgurl"/>
+		</div>
+		<script type="text/javascript">
+			let vm=new Vue({
+				el:'#app',
+				data:{
+					Imgurl:'img/1.jpg'
+				}
+				
+			})
+		</script>
+	</body>
+</html>

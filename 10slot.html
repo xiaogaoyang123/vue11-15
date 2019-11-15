@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<ww>
+				<div>{{yy}}</div>
+			</ww>
+			
+		</div>
+		<template id="box">
+			<div>
+				<h2>我进来了</h2>
+				<slot></slot>
+				<h1>我出去啦</h1>
+			</div>
+			</template>
+		<script type="text/javascript">
+			let vm=new Vue({
+				el:'#app',
+				data:{
+					yy:'灰蒙蒙的'
+				},
+				components:{
+					'ww':{
+						template:'#box'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

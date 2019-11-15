@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<ul v-for="item in dataList">
+				<li>{{item}}</li>
+			</ul>
+			当循环报错解决办法：
+            <ul v-for="(item,x) in dataList" :key="x">
+            	<li>{{item}}</li>
+            </ul>
+		</div>
+		<script type="text/javascript">
+			let vm=new Vue({
+				el:'#app',
+				data:{
+					dataList:['花有重开日','人无再少年']
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<ww>
+				<div slot="one">我是一只小小鸟</div>
+				<div slot="two">想飞</div>
+				<div slot="three">也飞不高</div>
+				hhh
+			</ww>
+		</div>
+		<script type="text/javascript">
+			Vue.component('ww',{
+				template:`
+				<div>
+				<span>首页</span>
+				<slot name="two">咿呀咿呀</slot>
+				
+				<slot name="one">我是一只小鸭子</slot>
+
+				<slot name="three">吆</slot>
+				<slot>我是一只小鸭子咿呀咿呀吆</slot>
+				`
+			})
+			new Vue({
+				el:'#app'
+			})
+		</script>
+	</body>
+</html>
